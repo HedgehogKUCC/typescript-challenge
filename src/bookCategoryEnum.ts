@@ -23,6 +23,18 @@ export enum BookCategory {
  * 輸出: 'Book category: Novel'
  */
 
-export function getBookCategory(category) {
+export function getBookCategory(category: BookCategory): string {
   // 在此實現函式
+  const BOOK_CATEGORY = "Book category:";
+
+  switch (category) {
+    case BookCategory.Novel:
+      return `${BOOK_CATEGORY} ${BookCategory.Novel}`;
+    case BookCategory.Science:
+      return `${BOOK_CATEGORY} ${BookCategory.Science}`;
+    case BookCategory.Education:
+      return `${BOOK_CATEGORY} ${BookCategory.Education}`;
+    default:
+      throw new Error('Invalid category');
+  }
 }

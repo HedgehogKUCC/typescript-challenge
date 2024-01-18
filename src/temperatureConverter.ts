@@ -4,4 +4,6 @@
  * @returns 華氏溫度
  */
 export function celsiusToFahrenheit(celsius: number): number {
+    // 在此實現函式
+    return celsius * 9 / 5 + 32;
 }

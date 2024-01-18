@@ -11,4 +11,13 @@ describe('非同步加總函式', () => {
         const result = await asyncSum([]);
         expect(result).toBe(0);
     });
+
+    it('錯誤訊息', async () => {
+        try {
+            // @ts-expect-error
+            await asyncSum(true);
+        } catch (error) {
+            expect(error).toBe('Error');
+        }
+    });
 });

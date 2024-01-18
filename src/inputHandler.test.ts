@@ -10,4 +10,9 @@ describe('處理各種輸入', () => {
   it('當輸入為數字時，應正確處理', () => {
     expect(handleInput(123)).toBe('Input is a number: 123');
   });
+
+  it('當輸入不是字串或數字時，應回傳錯誤訊息', () => {
+    // @ts-expect-error
+    expect(() => handleInput(true)).toThrowError('Invalid input');
+  });
 });

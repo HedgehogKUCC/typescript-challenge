@@ -6,4 +6,11 @@
  */
 
 // 請在下方寫下你的程式碼
-
+export function fetchData(url: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => resolve(data))
+        .catch(() => reject("Error"))
+    })
+}

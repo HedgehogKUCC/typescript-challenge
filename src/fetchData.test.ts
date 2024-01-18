@@ -6,4 +6,13 @@ describe('非同步取得資料', () => {
         const data = await fetchData('https://jsonplaceholder.typicode.com/todos/1');
         expect(data).toHaveProperty('id');
     });
+
+    it('錯誤訊息', async () => {
+        try {
+            // @ts-expect-error
+            await fetchData(123);
+        } catch (error) {
+            expect(error).toBe('Error');
+        }
+    });
 });
